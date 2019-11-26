@@ -1,10 +1,53 @@
 body {
-  background: whitesmoke;
-}
+  background-color: rgb(10, 14, 14);
+  border-radius: 500px;
+  }
+  #game{
+      background-color: rgb(10, 14, 14);
+     
+  }
+  #userSelection
+  {
+      background-color: rgb(10, 14, 14);
+      text-align: center;
+      padding: 30px;
+      margin: 10px; 
+      color: whitesmoke;
+  }
+  #result
+  {
+      background-color: rgb(10, 14, 14);
+      color:whitesmoke;
+      text-align: center;
+      padding: 30px;
+      font-size: 2.0em;
+  }
+  .selection
+  {
+      background-color: rgb(10, 14, 14);
+      float: left; 
+      list-style: none; 
+      border: 5px;
+      border-radius: 175px;
+      margin: 30px; 
+      border-color: red;
+  }
+  .selection img
+  {   border-radius: 175px;
+      background-color:rgb(10, 14, 14);
+      width:     350px; 
+      padding: 2px;
+      border-color: red;
 
-.choices {
-  border: 3px solid black;
-  display: inline-flex;
-  height: 250px;
-  width: 250px;
-}
+  }
+  button
+  {
+      background-color: rgb(194, 0, 0);
+      color: whitesmoke;
+      width: 95px;
+      height: 45px;
+      border-radius: 175px;
+      font-size: 135%;
+      
+  }
+  

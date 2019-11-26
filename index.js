@@ -1,35 +1,74 @@
-var choices = document.getElementsByClassName("choices");
-var userChoice = ""
-var compChoices = ["Rock", "Paper", "Scissors"]
-var compChoice = Math.random();
-var show = document.createElement("H1")
-
-
-if (compChoice < 0.34) {
-  compChoice = "Rock";
-  show.innerHTML = compChoice
-  document.body.appendChild(show)
+var userOption = undefined; 
+function playWith(option){
+    // first, we deselect the previous selected element (if exist)
+    if (userOption != undefined)
+    {
+       userSelectionElement = document.getElementById(userOption);
+       // we remove the purple border (if exist)
+       userSelectionElement.style.border = "5px #000000  solid";
+    }           
+    // then, we select the user option and we add 
+    // a purple border
+    userOption = option;
+    userSelectionElement = document.getElementById(option);
+    userSelectionElement.style.border = "5px #FF0000 solid";
+ }
+ function playGame(){
+    var computerOption = Math.random();
+ if (computerOption <0.34){
+     computerOption = "Rock";
+ }else if(computerOption <=0.67){
+     computerOption = "Paper";
+ }else{
+     computerOption = "Scissors";
+     
+ }
+ 
+ resultMessage = compare(userOption, computerOption);
+ 
+ document.getElementById("result").innerHTML = 
+ "<p>You chose: " + userOption + 
+ "<p>Computer chose: " + computerOption + "</p> <p>" + resultMessage + "</p>";
+ 
 }
-else if (compChoice <= 0.67 ) {
-  compChoice = "Paper";
-  show.innerHTML = compChoice
-  document.body.appendChild(show)
-}
-else {
-  compChoice = "Scissors";
-  show.innerHTML = compChoice
-  document.body.appendChild(show)
-}
-
-// function reset()
-
-for(var i =0; i < choices.length; i++) {
-  choices[i].addEventListener("click", function() {
-    userChoice = this.id;
-    console.log("You Chose: " + userChoice);
-    console.log("Computer Chose: " + compChoice);
-  });
-};
-
-// console.log(userChoice)
-// console.log(compChoice)
+function compare(userSelection, computerSelection)
+        {
+            if(userSelection == undefined)
+            {
+                return "Please, select a weapon before you fight!"
+            }   
+            if (userSelection == computerSelection)
+            {
+               return "It is a draw!" ;
+              
+              
+            }
+            
+            if (userSelection == "Rock")
+            {
+                if (computerSelection == "Scissors")
+                {
+                     return "YOU WIN!!!!.";
+                } else {
+                    return "You lose. Try again.";
+                }
+                
+            } else if (userSelection == "Paper") {
+                
+                if (computerSelection == "Rock")
+                {
+                     return "YOU WIN!!!!." ;
+                } else if("scissors") {
+                    return "You lose. Try again.";
+                }
+                
+            } else if (userSelection == "Scissors") {
+              
+                if (computerSelection == "Rock")
+                {
+                    return "You lose. Try again.";
+                }else{
+                    return "YOU WIN!!!!.";
+                }
+            }
+        }  
